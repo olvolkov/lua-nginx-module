@@ -1654,7 +1654,7 @@ ngx_http_lua_set_ssl(ngx_conf_t *cf, ngx_http_lua_loc_conf_t *llcf)
         }
     }
 
-    if (ngx_ssl_create(llcf->ssl, llcf->ssl_protocols, NULL) != NGX_OK) {
+    if (ngx_ssl_create(llcf->ssl, llcf->ssl_protocols, llcf->ssl_certificate_keys, NULL) != NGX_OK) {
         return NGX_ERROR;
     }
 
